@@ -134,6 +134,105 @@ for (let i = 0; i < values.length; i++) {
 console.log(sum); // -> 190
 
 
+// Loops e arrays
+// dessa vez Vamos tentar brincar com matrizes usando loop
+
+/*
+Queremos que o usuário insira nomes durante a execução do programa (usaremos oincitarcaixa de diálogo), 
+que serão colocados no array um por um. 
+A inserção dos nomes terminará quando o botão Cancelar for pressionado. 
+Então, escreveremos todo o conteúdo do array (ou seja, todos os nomes inseridos) no console.
+*/
+
+let names = [];
+let isOver = false;
+while (!isOver) {
+    let name = prompt("Enter another name or press cancel.");
+    if (name != null) {
+     names.push(name);
+    } else {
+     isOver = true;
+    }
+}
+for (let i = 0; i < names.length; i++){
+    console.log(names[i]);
+}
+
+/*
+    essa função usara o prompt(name) para escrever os nomes e os guardara no array names cada vez que o nome for inserido e ok for precionado
+    outrora ele termina a função e percorre cada name do array names e os imprime no console um abaixo do outro através de um índice i
+*/
+
+/*
+    outro exemplo
+    se quiséssemos percorrer os elementos do array em ordem reversa, 
+    inicializaríamos a variável index com o valor do maior índice e o diminuiríamos em um durante cada iteração. 
+    Também não há nada que nos impeça de pular alguns elementos de cada vez,
+    incrementando ou decrementando a variável index em um valor maior que um.
+    Dê uma olhada no exemplo abaixo:
+*/
+
+let values = [10, 30, 50, 100];
+ 
+for (let i = 0; i < values.length; i++) {
+    console.log(values[i]); // -> 10, 30, 50, 100
+}
+ 
+for (let i = values.length - 1; i > 0; i--) {
+    console.log(values[i]); // -> 100, 50, 30, 10
+}
+ 
+for (let i = 0; i < values.length; i += 2) {
+    console.log(values[i]); // -> 10, 50
+}
+
+
+// for...of
+
+/*
+    Além do loop for regular, existem duas versões específicas, uma das quais, for...of, 
+    é dedicado para uso com arrays (e outras estruturas iterativas, que estão, no entanto, além do escopo deste curso).
+    Em um loop desse tipo, não especificamos explicitamente nenhuma condição ou número de iterações, 
+    pois ele é executado exatamente tantas vezes quantos elementos há no array indicado.
+*/
+
+// Neste exemplo, usamos um loop for simples:
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let i = 0; i < values.length; i++) {
+    sum += values[i];
+}
+console.log(sum); // -> 190
+
+// A versão deste programa usando o for...of deterá uma aparência um pouco diferente:
+let values = [10, 30, 50, 100];
+let sum = 0;
+for (let number of values) {
+    sum += number;
+}
+console.log(sum); // -> 190
+
+/*
+    Entre colchetes após a palavra for, você não encontrará três campos separados por ponto e vírgula.
+    Há uma declaração de variável, seguida pela palavra of e então um array, cujos elementos percorreremos (variável ou literal). 
+    Em nosso exemplo, for (let number of values) significa que a variável number conterá os elementos subsequentes do array values ​​em cada iteração.
+    A sintaxe deste loop é a seguinte:
+
+    for (variable of array) {
+        block of code
+    }
+*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
