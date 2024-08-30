@@ -245,11 +245,40 @@ let day2 = [17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 
 console.log(`mean: ${getMeanTemp(day2)}`); // -> mean:
 18.083333333333332
 
+// Sombreamento
+/*
+    Como mencionamos anteriormente, os parâmetros são tratados dentro da função como variáveis ​​locais. 
+    E assim como as variáveis ​​locais explicitamente declaradas dentro de uma função, e
+    las sombreiam as variáveis ​​globais de mesmo nome (ou mais geralmente, variáveis ​​do escopo externo).
 
+    A função add tem dois parâmetros: primeiro e segundo. 
+    Ao mesmo tempo, declararemos, fora da função, variáveis ​​globais denominadas primeiro, segundo, terceiro, e quarto.
+*/
 
+function add(first, second) {
+    return first + second;
+}
+let first = 10, second = 20, third = 40, fourth = 80;
+console.log(add(first, second)); // -> 30
+console.log(add(second, third)); // -> 60
+console.log(add(third, fourth)); // -> 120
 
+// É claro que, fora da função, cada um desses nomes se referirá a variáveis ​​globais.
+// Tente também executar e analisar mais um exemplo simples, no qual você pode sombrear variáveis ​​com parâmetros e variáveis ​​locais.
 
-
+let a = 100, b = 200, c = 300;
+function test(a) {
+     let b = 10;
+     console.log(a); // parameter a
+     console.log(b); // local variable b
+     console.log(c); // global variable c
+}
+test(1);   // -> 1
+      // -> 10
+      // -> 300
+console.log(a); // -> 100
+console.log(b); // -> 200
+console.log(c); // -> 300
 
 
 
