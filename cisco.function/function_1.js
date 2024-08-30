@@ -181,8 +181,69 @@ console.log(`mean: ${getMeanTemp()}`);
     console.log sem o uso da variável meanTemp.
 */
 
+//parãmetros
+/*
+    Primeiro de tudo, o uso de parâmetros em funções é opcional. 
+    Pode haver funções que não tenham parâmetros, como vimos em nossos exemplos anteriores, assim como pode haver funções que não retornem valores.
+    No entanto, na maioria das vezes criamos funções que têm parâmetros definidos e retornam valores.
 
+    Em JavaScript, os parâmetros de uma função aparecem em sua declaração. 
+    São nomes separados por vírgulas, colocados entre parênteses após o nome da função. 
+    Cada parâmetro dentro de uma função será tratado como uma variável local.
 
+    Quando tal função é chamada, os valores (literais, variáveis, chamadas de função) 
+    devem ser colocados entre parênteses após seu nome e são tratados como parâmetros dentro da função. 
+    Os valores fornecidos durante uma chamada são chamados de argumentos. 
+    Os argumentos, se houver mais de um, são separados por vírgulas e devem ser passados ​​na mesma ordem que os parâmetros que definimos na declaração da função.
+
+    exemplo:
+*/
+
+function add(first, second) {
+        return first + second;
+    }
+let result = add(5, 7));
+console.log(result); // -> 12
+
+/*
+    Na chamada de exemplo, passamos os argumentos 5 e 7 para a função. Assim, durante a operação da função, 
+    o primeiro parâmetro tem um valor de 5 e o segundo parâmetro tem um valor de 7. A função retorna o valor 12 para a variável de resultado.
+
+    Os nomes dos parâmetros, assim como as variáveis, devem estar relacionados ao seu propósito – neste caso, fizemos diferente para enfatizar que a ordem dos parâmetros é importante. 
+    Dentro da função add, esses parâmetros são tratados como variáveis ​​locais, cujos valores serão fornecidos quando a função for chamada.
+
+    Você pode passar qualquer tipo de dado como argumento para a função, tanto simples quanto complexo. 
+    Vamos escrever a função getElement, que retornará o elemento selecionado do array, com o array e o índice do elemento sendo os parâmetros da função.
+*/
+
+function getElement(elements, index) {
+    return elements[index];
+}
+// Vamos chamá-lo com argumentos de exemplo:
+let names = ["Alice", "Bob", "Eve", "John"];
+let name = getElement(names, 2);
+console.log(name); // -> Eve
+
+/*
+    Vamos voltar ao exemplo com temperatura média. 
+    a função getMeanTemp receberá um parâmetro – temperaturas. Ao mesmo tempo, 
+    removeremos a variável global com este nome do programa e criaremos outras duas, day1 e day2, 
+    que conterá os dados de medição. Esses dados serão passados ​​para a função.
+*/
+
+function getMeanTemp(temperatures) {
+     let sum = 0;
+     for (let i = 0; i < temperatures.length; i++) {
+      sum += temperatures[i];
+     }
+     return sum / temperatures.length;
+}
+let day1 = [12, 12, 11, 11, 10, 9, 9, 10, 12, 13, 15, 18, 21, 24, 24, 23, 25, 25, 23, 21, 20, 19, 17, 16];
+console.log(`mean: ${getMeanTemp(day1)}`); // -> mean:
+16.666666666666668
+let day2 = [17, 16, 14, 12, 10, 10, 10, 11, 13, 14, 15, 17, 22, 27, 29, 29, 27, 26, 24, 21, 19, 18, 17, 16];
+console.log(`mean: ${getMeanTemp(day2)}`); // -> mean:
+18.083333333333332
 
 
 
