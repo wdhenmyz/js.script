@@ -70,7 +70,14 @@ window.addEventListener("click", function() {
   Entretanto, isto é apenas para demonstrar uma chamada de função com um evento gerado pelo usuário.
 */
 
+/*
+  FUNÇÕES DE SETA
 
+  Uma função de seta é uma forma mais curta de uma expressão de função.
+  Uma expressão de função de seta é composta de: parênteses contendo zero a múltiplos parâmetros (se exatamente um parâmetro estiver presente, os parênteses podem ser omitidos);
+  uma seta que se parece com isso "=>" ;e o corpo da função, que pode ser cercado por chaves se o corpo for mais longo.
+  Se uma função de seta tiver apenas uma instrução e retornar seu valor, podemos omitir a palavra-chave return , pois ela será adicionada implicitamente.
+*/
 
 
 
