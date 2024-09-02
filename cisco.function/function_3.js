@@ -121,7 +121,19 @@ names.forEach(showName); // -> Alice, Eve, John
   Podemos criar qualquer função para este propósito. 
   Há uma condição, que é que ela deve ter pelo menos um parâmetro,
   que será tratado como um elemento visitado do array (a sintaxe desta função pode ser um pouco mais complexa, mas nós a explicaremos na próxima parte do curso).
+
+  a função showName foi passada como um argumento de chamada para o forEach método do array de nomes.
+  Portanto, showName será chamado três vezes, para cada elemento do array names,
+  e em cada chamada seu parâmetro será igual ao nome sucessivo, ou seja:Alice,Véspera e John.
+  A única coisa que showName tem que fazer é exibir o element(names) recebido. 
+
+  O mesmo efeito pode ser alcançado passando uma função de seta anônima para o método forEach. 
+  Nós nem mesmo a armazenamos em uma variável, porque assumimos que a usaremos apenas aqui e não nos referiremos a ela novamente.
 */
+
+
+
+
 
 
 
