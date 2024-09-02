@@ -40,7 +40,48 @@ console.log('test 2');
   inner 1
   inner 1
   inner 1
+
+  Geralmente, no entanto, chamadas de função assíncronas estão relacionadas a situações ligeiramente diferentes. 
+  Elas são determinadas por eventos não relacionados a temporizadores, mas sim gerados fora do programa.
+  elas podem ser, por exemplo, ações executadas pelo usuário, como um clique do mouse em um elemento de interface em uma página.
 */
+
+/*
+  Se executarmos o código JavaScript no lado do cliente, no navegador, ele sempre será associado ao site.
+  A janela na qual esta página está localizada é representada no JavaScript do lado do cliente por uma variável global window.
+  O objeto window tem um método (ou sua própria função) chamado addeventlistener. 
+  Esta função permite que você registre uma determinada ação a ser executada em resposta a um evento relacionado à janela.
+  
+  Tal evento pode ser um "clique", que é um único clique do mouse em qualquer lugar da página
+  (há um conjunto limitado de eventos nomeados associados a um objeto específico, aos quais ele pode reagir).
+  A ação a ser tomada é passada para o método addeventlistener como uma função de retorno de chamada.
+*/
+
+window.addEventListener("click", function() {
+     console.log("clicked!");
+});
+
+/*
+  quando você clica em qualquer lugar da página uma mensagem deve aparecer no console: "clicked!".
+  Nossa função não é chamada até que o evento "click" ocorra, o que é absolutamente assíncrono.
+  Enquanto isso, entre cliques subsequentes, o restante do programa poderia ser executado, se tivéssemos vontade de escrevê-lo.
+  Na verdade, não é uma boa ideia conectar uma resposta de clique a um objeto de janela.
+  Na maioria das vezes, tais ações são associadas a elementos específicos da interface (botões, caixas de seleção, etc.) que permitem sua diferenciação.
+  Entretanto, isto é apenas para demonstrar uma chamada de função com um evento gerado pelo usuário.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
