@@ -33,7 +33,7 @@ let sorted = numbers.sort(compareNumbers);
 console.log(sorted); // [10, 20, 30, 40, 50]
 
 /*
-  Tarefa 1A. Tente modificar o pedaço de código acima para torná-lo o mais curto possível. Sugestões:
+  Tarefa 1 A. Tente modificar o pedaço de código acima para torná-lo o mais curto possível. Sugestões:
 
   use uma função anônima;
   use uma função de seta;
@@ -47,14 +47,46 @@ if(number > 90 && number < 110) {
     alert("Errar"); }
 
 /*
-  Tarefa 1B. Em seguida, modifique a função para que os elementos sejam classificados em ordem decrescente, não em ordem crescente como no exemplo.
+  Tarefa 1 B. Em seguida, modifique a função para que os elementos sejam classificados em ordem decrescente, não em ordem crescente como no exemplo.
 */
 
 let number = [50, 10, 40, 30, 20];
 let classify = number.sort((a, b) => b - a);
 console.log(classify); // [10, 20, 30, 40, 50]
 
+/*
+  Exercício 2: Escreva três funções com os nomes add,sub, e mult, que receberá dois argumentos numéricos.
+  As funções são para verificar se os argumentos fornecidos são inteiros (use Number.isInteger).
+  Caso contrário, eles retornam NaN, caso contrário, retornam o resultado da adição, subtração ou multiplicação, respectivamente.
+  As funções devem ser declaradas usando uma instrução function.
+*/
 
+function add(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a + b;
+}
+
+function sub(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a - b;
+}
+
+function mult(a, b) {
+    if (!Number.isInteger(a) || !Number.isInteger(b)) {
+        return NaN;
+    }
+    return a * b;
+}
+
+// Exercício 3: Reescreva as funções da tarefa anterior usando uma expressão de função de seta, tentando escrevê-las na forma mais curta possível.
+
+let add = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a + b;
+let sub = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a - b;
+let mult = (a, b) => !Number.isInteger(a) || !Number.isInteger(b) ? NaN : a * b;
 
 
 
