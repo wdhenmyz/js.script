@@ -78,9 +78,50 @@ window.addEventListener("click", function() {
   uma seta que se parece com isso "=>" ;e o corpo da função, que pode ser cercado por chaves se o corpo for mais longo.
   Se uma função de seta tiver apenas uma instrução e retornar seu valor, podemos omitir a palavra-chave return , pois ela será adicionada implicitamente.
 */
+// Por exemplo, a função add, que já conhecemos:
 
+let add = function(a, b) {
+     return a + b;
+}
+console.log(add(10, 20)); // -> 30
 
+// pode ser escrito da seguinte forma:
 
+let add = (a, b) => {
+     return a + b;
+}
+console.log(add(10, 20)); // -> 30
+
+//ou simplificado ainda mais (a função tem apenas uma instrução, cujo valor retorna):
+
+let add = (a, b) => a + b;
+console.log(add(10, 20)); // -> 30
+
+/*
+  Se a função de seta receber exatamente um parâmetro, os parênteses podem ser omitidos.
+  A expressão de seta é usada principalmente para funções curtas, geralmente anônimas, que podem ser apresentadas como ainda mais compactas nesta forma.
+  
+  Vamos voltar aos exemplos com a função recursiva factorial, que recebe exatamente um parâmetro, n. No exemplo anterior, nós o declaramos usando a instrução de função:
+*/
+
+function factorial(n) {
+     return n > 1 ? n * factorial(n - 1) : 1;
+}
+console.log(factorial(5)); // -> 120
+
+// Um exemplo típico de uso de funções de seta é o método forEach
+let names = ['Alice', 'Eve', 'John'];
+function showName(element) {
+     console.log(element);
+}
+names.forEach(showName); // -> Alice, Eve, John
+
+/*
+  Esta função será chamada a cada vez para cada elemento do array.
+  Podemos criar qualquer função para este propósito. 
+  Há uma condição, que é que ela deve ter pelo menos um parâmetro,
+  que será tratado como um elemento visitado do array (a sintaxe desta função pode ser um pouco mais complexa, mas nós a explicaremos na próxima parte do curso).
+*/
 
 
 
