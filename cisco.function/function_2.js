@@ -182,11 +182,84 @@ console.log(operation(function(a, b) {
   À primeira vista, pode parecer um mecanismo completamente inútil, mas no mundo real, é usado com muita frequência.
 */
 
+// CALLBACKS
+/*
+  Funções que são passadas como argumentos para outras funções podem parecer bem exóticas e não muito úteis, mas, na verdade, elas são uma parte muito importante da programação.
+  Tão importantes que elas até têm seu próprio nome. Elas são funções de retorno de chamada .
+*/
 
+/*
+  Callbacks síncronos
+  
+  A execução síncrona é a maneira mais natural de ver como o programa funciona. 
+  Instruções subsequentes são executadas na ordem em que são colocadas no código. 
+  Se você chamar uma função, as instruções nela serão executadas no momento da chamada.
+  Se passarmos outra função para esta função como um argumento, e a chamarmos dentro de uma função externa também, então todas as instruções manterão sua ordem natural.
+*/
 
+let inner = function() {
+     console.log('inner 1');
+}
+let outer = function(callback) {
+     console.log('outer 1');
+     callback();
+     console.log('outer 2');
+}
+console.log('test 1');
+outer(inner);
+console.log('test 2');
+/*
+  A execução do código acima fará com que o console imprima o seguinte texto nesta ordem exata:
+  
+  test 1
+  outer 1
+  inner 1
+  outer 2
+  test 2 
 
+  Portanto, a ordem das ações resultantes da ordem de chamada dos comandos e funções é mantida.
+  No entanto, essa ordem pode ser perturbada sob certas circunstâncias especiais.
+*/
 
+/*
+  Callbacks assíncronos
 
+  No caso de JavaScript do lado do cliente em execução em um navegador, ele é limitado à programação baseada em eventos, ou seja, a resposta assíncrona a certos eventos. 
+  Um evento pode ser um sinal enviado por um timer, uma ação do usuário (por exemplo, pressionar uma tecla ou clicar em um elemento de interface selecionado)
+  ou informações sobre o recebimento de dados do servidor.
+  Usando funções apropriadas, combinamos um tipo específico de evento com uma função de retorno de chamada selecionada, que será chamada quando o evento ocorrer.
+
+  Um dos casos mais simples quando há uma execução assíncrona de instruções é o uso da função setTimeout. 
+  vamos modificar um pouco o exemplo anterior:
+*/
+
+let inner = function() {
+console.log('inner 1');
+}
+let outer = function(callback) {
+console.log('outer 1');
+setTimeout(callback, 1000) /*ms*/;
+console.log('outer 2');
+}
+console.log('test 1');
+outer(inner);
+console.log('test 2');
+// Na função externa, não chamamos callback() imediatamente, mas passe para setTimeout, que o executa com um atraso de 1000 milissegundos (um segundo).
+
+/*
+  Esta função recebe outra função (um retorno de chamada) e o tempo expresso em milissegundos como argumentos.
+  A função de retorno de chamada é executada após o tempo especificado e, enquanto isso, a próxima instrução do programa (colocada no código apóssetTimeout) será executado.
+  Assim, o momento em que a função de retorno de chamada é chamada não é determinado por sua ordem, mas por um atraso imposto arbitrariamente.
+  O atraso se aplica somente à função de retorno de chamada dada asetTimeout, enquanto o restante do código ainda é executado de forma síncrona.
+
+  desta vez a seguinte sequência de mensagens aparecerá no console (a última com um atraso de um segundo):
+  test 1
+  outer 1
+  outer 2
+  test 2
+  ...
+  inner 1
+*/
 
 
 
