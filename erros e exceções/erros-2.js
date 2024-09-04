@@ -101,6 +101,97 @@ try {
     Daremos uma olhada mais de perto nessa construção em breve.
 */
 
+// Erros sem exceções?
+// Em JavaScript, nem todas as situações errôneas geram exceções. Muitas delas são tratadas de uma forma ligeiramente diferente. O melhor exemplo são os erros aritméticos .
+
+console.log(100 / 0); // -> Infinity
+console.log(100 * "2"); // -> 200
+console.log(100 * "abc"); // -> NaN
+
+/*
+    Nenhum dos comandos acima gerará uma exceção, embora eles não pareçam a aritmética mais correta.
+    Dividir por zero resultará em um valor Infinity . A multiplicação de um número por uma string, que representará um número, converterá automaticamente essa string em um número (e então executará a multiplicação). 
+    Uma tentativa de executar uma operação aritmética em uma string que não representa um número (ou seja, que não pode ser convertida) resultará emNaN(não é um número).
+    Pelo menos dois desses casos estão claramente errados (o primeiro e o terceiro), mas em vez de exceções, a informação sobre o erro é o valor específico que é retornado.
+
+    Vejamos mais um exemplo:
+*/
+
+console.log(Math.pow("abc", "def")); // -> NaN
+
+/*
+    dessa vez usamos o method pow de Math.
+    que é usado para elevar um número dado à potência dada. O objeto Math será discutido nas próximas partes do curso, mas neste ponto basta-nos dizer que Math.pow
+    simplesmente uma função que recebe dois números como argumentos e retorna o resultado de sua potência. 
+    No entanto, as duas sequências de caracteres que fornecemos a esta função são números difíceis de chamar.
+    A função não gera uma exceção, no entanto, mas retorna o valor NaN.
+
+    A conclusão é bem simples – se você estiver aprendendo sobre uma nova função ou operador, 
+    você tem que verificar na documentação (por exemplo, na página MDN) como eles se comportam em caso de erros. 
+    Alguns deles gerarão exceções, enquanto outros retornarão alguns valores específicos. 
+    Dependendo disso, você será capaz de se preparar adequadamente para lidar com erros usando o método try ou instruções condicionais simples.
+    
+    A propósito, para os exemplos mostrados, a solução mais sensata seria verificar se os valores fornecidos realmente são números (lembra do operador type of?).
+*/
+
+// Confiança limitada
+
+/*
+    Programas não são executados no vácuo. 
+    Normalmente, durante sua execução, há interações com usuários (por exemplo, inserindo dados necessários para calcular certos valores) 
+    ou outros programas ou sistemas (por exemplo, baixando dados do servidor). 
+    
+    O comportamento de usuários e outros sistemas deve ser tratado com cautela, e não podemos presumir que o usuário fornecerá dados no formato que exigimos,
+    ou que o servidor de dados sempre funcionará. Essas situações inesperadas também serão fontes de erros em nosso programa.
+    
+    E embora não dependam diretamente de nós, é nossa responsabilidade antecipar situações potencialmente perigosas.
+    
+    Se, por exemplo, escrevermos uma calculadora na qual o usuário insere seus valores, então provavelmente deveríamos verificar se o divisor não é zero antes de fazermos a divisão. 
+    Teoricamente, o usuário deve saber que não dividimos por zero, mas somos responsáveis ​​pela estabilidade do programa. 
+    
+    Não acredite no usuário ou em outros sistemas.
+    
+    Preveja o que pode dar errado e verifique os dados recebidos antes de usá-los em seu programa.
+
+    Vamos escrever um pedaço de código que pedirá para você digitar dois números. Queremos então exibir o resultado da divisão do primeiro número pelo segundo:
+*/
+
+let sX = prompt("Enter the first number");
+let sY = prompt("Enter the second number");
+let x = Number(sX);
+let y = Number(sY);
+if (Number.isFinite(x) && Number.isFinite(y) && y !== 0) {
+    console.log(x / y);
+} else {
+    console.log("incorrect arguments");
+}
+
+/*
+    Você provavelmente se lembra da função de prompt, que exibe uma caixa de diálogo na qual podemos inserir um valor. 
+    Prompt retornará o valor inserido, sempre como uma string (mesmo que o usuário insira um número, por exemplo, ele digite 1024, mas obtemos a string "1024").
+    
+    Estamos convertendo explicitamente essa cadeia de caracteres em um número usando o construtor Number (isso será discutido em detalhes no próximo curso). 
+    Como não acreditamos no usuário, prevemos que, em vez de um número, ele poderia ter dado uma string como "abcd" ou um segundo valor igual a "0". 
+    
+    Portanto, antes de realizarmos a divisão, verificamos se podemos aceitar os valores convertidos. Usamos o método Number.isFinite para essa finalidade. 
+    Ele retorna true se o argumento for um número correto e false se for, por exemplo, Infinity ou NaN. Além disso, verificamos se o divisor não é zero.
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
