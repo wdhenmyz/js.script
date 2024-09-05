@@ -25,3 +25,12 @@ console.log(div(4, 0)); // -> Uncaught RangeError: Can’t divide by 0
     Se tal exceção for capturada, o programa deve imprimir uma mensagem apropriada (retirada da exceção) e continuar sua operação (divisão por elementos sucessivos do array).
 */
 
+for (let i = 0; i < numbers.length; i++) {
+    let result;
+    try {
+        result = div(1000, numbers[i]);
+    } catch (e) {
+        result = e.message;
+    }
+    console.log(result);
+}
