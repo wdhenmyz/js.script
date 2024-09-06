@@ -68,6 +68,37 @@ console.log("After debugger");
   Então, sempre que o JavaScript encontra a instrução debugger, ele verifica se o depurador está presente e, se estiver, a execução do código é interrompida naquele ponto exato.  */
 
 
+// Execução passo a passo do programa
+/*
+  Um dos principais recursos do depurador é sua capacidade de executar código passo a passo. 
+  Isso significa que podemos parar a execução do programa em qualquer lugar usando uma instrução do depurador e, em seguida, continuar a execução uma instrução por vez.
+
+  Isso é realmente útil quando suspeitamos que o comportamento ou a lógica do programa está com defeito e o código vai para um ramo incorreto de execução (vai para a instrução if errada, etc.).
+  Neste modo, podemos ver cada linha que é executada e cada linha que não é. P
+  odemos ver facilmente se a lógica nas instruções de controle de fluxo é válida ou não.
+
+  Então, já sabemos que a instrução do depurador, quando encontrada pelo JavaScript, interromperá a execução do código naquele lugar. 
+  Dependendo do navegador que estamos usando, os botões de controle de fluxo podem ter uma aparência diferente e podem estar localizados em lugares diferentes.
+  Em geral, todos os navegadores modernos suportam as seguintes opções para controlar a execução do script no modo de depuração:
+
+  Resume / Continue: Isso retomará a execução do script de forma normal e é usado quando verificamos o que queríamos verificar e agora queremos continuar com a execução do script.
+  
+  Step Into: Isso executa a próxima instrução no código apenas e a pausa novamente, e usamos isso quando queremos analisar o código em detalhes
+  ou verificar qual caminho exato a execução toma quando ramificações complexas estão acontecendo devido a instruções if...else em cascata ou outra lógica complicada.
+  Se a próxima instrução for uma chamada de função, usar Step Into pulará para dentro do código desta função.
+  
+  Step Over: Isso funciona como Step Into, exceto que se for usado quando a próxima instrução for uma chamada de função, o código não pulará para o código da função,
+  mas toda a função será executada e o programa será pausado novamente após pular para fora desta função. 
+  Isso é frequentemente usado quando a próxima instrução é uma chamada para uma função onde não sabemos se ela terá algum impacto, ou simplesmente não estamos interessados ​​em olhar.
+
+  Step Out: Isso nos permite pular imediatamente para fora de uma função na qual o código está pausado.  
+  
+  Vamos tentar praticar algumas ações básicas que podem ser executadas com o depurador.
+
+  O programa JavaScript que depuraremos deve ser reescrito em seu ambiente de desenvolvimento local
+  (por algum motivo, a depuração é mais legível se não usarmos nossa plataforma nesses exercícios).
+  
+  executamos nosso código abrindo um arquivo HTML simples no navegador, que incluía uma referência ao arquivo JavaScript a ser executado  */
 
 
 
