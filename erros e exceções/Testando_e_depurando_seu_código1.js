@@ -100,7 +100,49 @@ console.log("After debugger");
   
   executamos nosso código abrindo um arquivo HTML simples no navegador, que incluía uma referência ao arquivo JavaScript a ser executado  */
 
+// Preparação do ambiente e um exemplo
+//  Crie dois arquivos em qualquer editor de código: index.html e main.js. No arquivo index.html, coloque o código para esta página web HTML muito simples:
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="main.js"></script>
+</head>
+<body>
+    <p>Test Site</p>
+</body>
+</html>
 
+// Salve o arquivo no seu drive local, de preferência em um diretório vazio recém-criado. No mesmo diretório, salve o arquivo main.js, colocando o seguinte código dentro dele:
+function outer() {
+    let name = "outer";
+    let str = inner();
+    return str;
+}
+ 
+function inner() {
+    let name = "inner";
+    return "Hello !";
+}
+ 
+console.log("before outer() call");
+console.log(outer());
+console.log("after outer() call");
+/*
+  No navegador que você está usando, abra uma nova aba e carregue o arquivo index.html nela. 
+  Dependendo do seu navegador e sistema, você pode usar o menu do programa ou o atalho de teclado apropriado (no Linux e Windows: Ctrl + O, no macOS: ⌘ + O).
+  Se tudo tiver sido feito corretamente, você verá este texto na aba: "Test Site".
+
+  Agora precisamos iniciar as Ferramentas do Desenvolvedor. 
+  Por exemplo, nos navegadores Chrome e Firefox, no Windows e Linux, usamos a combinação de teclas: Ctrl + Shift + I.
+  No restante deste exercício, nos limitaremos a discutir como o depurador funciona usando os navegadores Chrome e Firefox como exemplos.
+  
+  Selecione Console nas abas Ferramentas do Desenvolvedor. Recarregue a página (combinação de teclas Ctrl + R ou ⌘ + R). 
+  As seguintes mensagens devem aparecer no console:  */
+
+before outer() call
+Hello !
+after outer() call
+// Este é o resultado dos métodos console.log do programa escrito no arquivo main.js.
 
 
 
