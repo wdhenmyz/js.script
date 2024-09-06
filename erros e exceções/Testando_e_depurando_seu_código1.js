@@ -169,6 +169,42 @@ console.log("after outer() call");
 
 before outer() call
 
+// Vamos tentar alguns cenários simples.
+
+/* Retomar execução
+  À direita da aba, localize o botão Resume (o ícone de triângulo girado para a direita – play). 
+  Se você passar o mouse sobre este botão, uma dica de ferramenta deve aparecer para que você possa ter certeza de que é o botão certo.
+  Pressione este botão ou use o atalho de teclado F8.
+  Como resultado, o programa seguirá em frente e, sem parar mais, será executado até o fim sozinho. 
+  O console agora deve mostrar as informações completas geradas pelo programa: */
+
+before outer() call
+Hello !
+after outer() call
+
+/* Usar Resume não necessariamente faz com que o programa seja executado até a conclusão. 
+  Podemos indicar onde ele deve parar novamente. 
+  Recarregue a página novamente. 
+  Observe que o depurador exibe números de linha à esquerda do código. 
+  Clique no número 15, indicando a última linha em nosso código. 
+  É assim que definimos o ponto de interrupção (a linha será destacada). 
+  Clique no número da linha novamente se quiser remover o ponto de interrupção (não o exclua ainda). 
+  Se clicarmos agora no botão Resume (ou usarmos F8), o programa seguirá em frente e parará no ponto de interrupção.
+  Como resultado, o console exibirá o seguinte texto: */
+
+before outer() call
+Hello !
+
+
+
+
+
+
+
+
+
+
+
 
 
 
