@@ -195,18 +195,10 @@ after outer() call
 before outer() call
 Hello !
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Somente clicando em Retomar novamente o programa será executado até o fim, e o console mostrará:
+before outer() call
+Hello !
+after outer() call
+/* ao depurar código, raramente usamos a declaração debugger. 
+Na maioria das vezes, no local onde o programa deve parar, apenas o indicamos usando pontos de interrupção definidos diretamente nas Ferramentas do Desenvolvedor. 
+Antes de continuar o trabalho, remova os pontos de interrupção (clicando nos números de linha apropriados). */
