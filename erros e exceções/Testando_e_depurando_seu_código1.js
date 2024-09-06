@@ -145,11 +145,29 @@ after outer() call
 // Este é o resultado dos métodos console.log do programa escrito no arquivo main.js.
 
 
+// Uso da instrução debugger
 
+/*  Vamos testar a declaração do depurador na prática. 
+  Coloque-a no código main.js antes de chamar a função outer. 
+  Então as últimas linhas do arquivo main.js agora devem ficar assim: */
 
+console.log("before outer() call");
+debugger;
+console.log(outer());
+console.log("after outer() call");
 
+/*  Não esqueça de salvar o arquivo modificado. 
+  Volte para o seu navegador e recarregue a página. 
+  O que aconteceu? Primeiro, nas Ferramentas do Desenvolvedor, a aba selecionada mudou: no Chrome, será para Fontes, no Firefox para Depurador.
+  A declaração do depurador faz com que o programa pare sua execução na linha onde a colocamos e aguarde nossa decisão. 
+  Na aba, entre outras informações, você deve ver o código do nosso programa, com a linha na qual a execução parou claramente destacada.
 
+  Na visualização Fontes / Depurador, também temos a opção de usar o console (não precisamos alternar para a aba Console). 
+  Tente pressionar a tecla Esc várias vezes. 
+  Observe que o console aparecerá e desaparecerá na parte inferior da aba. Para mais trabalho, deixe-o visível. 
+  Como apenas um console.log é executado antes do programa parar, você deverá ver apenas o seguinte no console */
 
+before outer() call
 
 
 
