@@ -44,9 +44,34 @@ console.log("Hello, World!");
   > async – significa que o script será executado imediatamente, mas em paralelo à análise do resto da página.  */
 
 
+// rodando javascript localmente com html.
+/*  Para executar isso localmente, você precisará abrir o editor de código de sua escolha. 
+  Crie um novo arquivo com a extensão .html (o nome do arquivo não importa, mas é uma boa prática evitar espaços no nome do arquivo). 
+  Coloque o seguinte código neste arquivo e salve-o.
 
+  <!DOCTYPE html>
+  <html>
+    <head>
+    <title>Página vazia</title>
+    <script src="main.js"></script>
+    </head>
+    <body>
+    </body>
+  </html>
 
+  Então, no mesmo editor, crie outro arquivo, desta vez chamado main.js (este é o nome que usamos em nosso arquivo html). 
+  Ele deve conter uma linha que você já viu antes:  */
 
+console.log("Hello, World!");
+/*  Salve as alterações e vá para o navegador. 
+  Abra uma nova aba, habilite as ferramentas do desenvolvedor (elas abrem para uma aba específica) e selecione a ferramenta do console. 
+  Dê a si mesmo um momento para se acostumar com o layout das ferramentas do desenvolvedor (cada ferramenta, incluindo o console, deve ser colocada em um painel separado, que pode ser selecionado). */
+
+// Executando o código diretamente no console
+/*  o console não é usado apenas para exibir informações, mas também permite que você execute instruções JavaScript individuais. 
+  Essas instruções devem ser executadas no contexto de alguma página HTML. 
+  No entanto, você não precisa necessariamente escrever sua página mínima, Tente abrir uma nova guia e digite about:blank na barra de endereço. 
+  Este é um pseudo endereço que diz ao seu navegador para gerar e carregar uma página HTML mínima em branco.  */
 
 
 
