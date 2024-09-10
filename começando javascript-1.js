@@ -71,7 +71,20 @@ console.log("Hello, World!");
 /*  o console não é usado apenas para exibir informações, mas também permite que você execute instruções JavaScript individuais. 
   Essas instruções devem ser executadas no contexto de alguma página HTML. 
   No entanto, você não precisa necessariamente escrever sua página mínima, Tente abrir uma nova guia e digite about:blank na barra de endereço. 
-  Este é um pseudo endereço que diz ao seu navegador para gerar e carregar uma página HTML mínima em branco.  */
+  Este é um pseudo endereço que diz ao seu navegador para gerar e carregar uma página HTML mínima em branco.  
+  
+  Em seguida, execute as ferramentas do desenvolvedor. No início, podemos verificar a aparência do HTML gerado pelo navegador. 
+  Para fazer isso, selecione a primeira ferramenta do painel (no Chrome, será Elements, no Firefox Inspector). 
+  Você deve ver um código HTML absolutamente mínimo:
+
+  <html>
+    <head></head>
+    <body></body>
+  </html>
+
+  Agora escolha o console nas ferramentas do desenvolvedor. 
+  Você deve ver um prompt, geralmente um sinal > ou >> seguido por um cursor piscando (se não houver cursor, clique no prompt). 
+  Então você pode digitar a instrução que mostrará "Hello, World!" no console (usando a função console.log).  */
 
 
 
